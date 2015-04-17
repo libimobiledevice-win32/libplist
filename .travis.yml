@@ -1,0 +1,16 @@
+language: cpp
+script:
+- "./autogen.sh"
+- "./configure --prefix=$HOME/out"
+- make
+after_success:
+- make install
+- tar -zcvf libplist.tar.gz -C $HOME/out .
+deploy:
+  provider: releases
+  file: libplist.tar.gz
+  skip_cleanup: true
+  on:
+    tags: true
+  api-key:
+    secure: f0SGzhl3e5ByeEtDl6t0JjBQ3HooafHpAi6ZgzS2lPqifbQaGPIjkQwRfqFkTHFOZarlB9kHeC8EyzVhL4Dh/gpkuYfd86Xhx2FxABYYuhy1uCHHIf5P8moICLPUOGA2VlOjwmITR5ZxAGfT/gMCY5fC0J1ru2uIWZsQE//ch6w=
