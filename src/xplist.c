@@ -19,6 +19,10 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
+#ifdef _MSC_VER
+#define snprintf _snprintf
+#define __func__ __FUNCTION__
+#endif
 
 #include <string.h>
 #include <assert.h>
