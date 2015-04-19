@@ -1,0 +1,21 @@
+before_build:
+  - nuget restore
+
+build:
+  project: libplist.vcxproj
+
+platform:
+  - Win32
+
+configuration:
+  - Debug
+
+on_success:
+  - cmd: choco install coapp
+  - ps: .\CreateNuGetPackage.ps1
+  - cmd: appveyor PushArtifact libplist.1.12.nupkg
+  - cmd: appveyor PushArtifact libplist.symbols.1.12.nupkg
+
+nuget:
+  project_feed: true
+  account_feed: true
