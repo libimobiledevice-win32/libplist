@@ -57,10 +57,11 @@ test-driver
 
 # MSVC
 Debug/
-libplist-Debug/
+Release/
 *.opensdf
 *.sdf
 *.suo
+*.user
 packages/
 *.nupkg
 Win32/
