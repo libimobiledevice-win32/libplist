@@ -30,19 +30,19 @@ nuget{
 		}
 
 	[x86,v120,debug] {
-            lib: { "Win32\Debug\libplist.lib", "Win32\Debug\libcnary.lib" };
+            lib: { "Win32\Debug\libplist.lib", "libcnary\Win32\Debug\libcnary.lib" };
             symbols: Win32\Debug\vc120.pdb;
         }
 	[x64,v120,debug] {
-            lib: { "x64\Debug\libplist.lib", "x64\Debug\libcnary.lib" };
+            lib: { "x64\Debug\libplist.lib", "libcnary\x64\Debug\libcnary.lib" };
             symbols: x64\Debug\vc120.pdb;
         }
 	[x86,v120,release] {
-            lib: { "Win32\Release\libplist.lib", "Win32\Release\libcnary.lib" };
+            lib: { "Win32\Release\libplist.lib", "libcnary\Win32\Release\libcnary.lib" };
             symbols: Win32\Release\vc120.pdb;
         }
 	[x64,v120,release] {
-            lib: { "Win32\Release\libplist.lib", "Win32\Release\libcnary.lib" };
+            lib: { "x64\Release\libplist.lib", "libcnary\x64\Release\libcnary.lib" };
             symbols: x64\Release\vc120.pdb;
         }
     }
