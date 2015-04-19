@@ -16,6 +16,13 @@ nuget{
         tags: { libplist, libimobiledevice, native };
     }
 
+    dependencies {
+        packages : {
+            libiconv/1.14.0.11,
+            libxml2/2.7.8.7
+        };
+    }
+
     files{ 
 		includeplist: {
 			#destination = ${d_include}plist;
