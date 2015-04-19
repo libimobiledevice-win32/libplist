@@ -15,9 +15,9 @@ configuration:
 
 on_success:
   - cmd: choco install coapp
-  - ps: .\CreateNuGetPackage.ps1
-  - cmd: appveyor PushArtifact libplist.1.12.nupkg
-  - cmd: appveyor PushArtifact libplist.symbols.1.12.nupkg
+  - ps: .\CreateNuGetPackage.ps1 -Build {build}
+  - cmd: appveyor PushArtifact libplist.1.12.{build}.nupkg
+  - cmd: appveyor PushArtifact libplist.symbols.1.12.{build}.nupkg
 
 nuget:
   project_feed: true
