@@ -54,3 +54,14 @@ cython/.deps
 cython/.libs
 cython/plist.c
 test-driver
+
+# MSVC
+Debug/
+libplist-Debug/
+*.opensdf
+*.sdf
+*.suo
+packages/
+*.nupkg
+Win32/
+x64/
