@@ -62,6 +62,8 @@ Release/
 *.sdf
 *.suo
 *.user
+*.filters
+*.out.autoconfig
 packages/
 *.nupkg
 Win32/
