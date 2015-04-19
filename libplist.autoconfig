@@ -1,0 +1,30 @@
+nuget{
+    nuspec{
+        id = libplist;
+        version : 1.12;
+        title: libplist;
+        authors: {libimobiledevice Project};
+        owners: {quamotion};
+        licenseUrl: "http://opensource.org/licenses/LGPL-2.1";
+        projectUrl: "http://www.libimobiledevice.org/";
+        iconUrl: "http://www.nuget.org/Content/Images/packageDefaultIcon-50x50.png";
+        requireLicenseAcceptance:false;
+        description: "A small portable C library to handle Apple Property List files in binary or XML.";
+        summary: "A small portable C library to handle Apple Property List files in binary or XML.";
+        copyright: Copyright 2013;
+        releaseNotes: "Release 1.12 of libplist. See https://github.com/libimobiledevice-win32/libplist/tree/msvc-1.12 for more.";
+        tags: { libplist, libimobiledevice, native };
+    }
+
+    files{ 
+		includeplist: {
+			#destination = ${d_include}plist;
+			"include\plist\*.h";
+		}
+
+	[x86,v120,debug] {
+            lib: Win32\Debug\libplist.lib;
+            symbols: Win32\Debug\vc120.pdb;
+        }
+    }
+}
