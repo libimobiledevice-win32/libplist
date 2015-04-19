@@ -19,6 +19,12 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="libcnary\cnary.c" />
+    <ClCompile Include="libcnary\iterator.c" />
+    <ClCompile Include="libcnary\list.c" />
+    <ClCompile Include="libcnary\node.c" />
+    <ClCompile Include="libcnary\node_iterator.c" />
+    <ClCompile Include="libcnary\node_list.c" />
     <ClCompile Include="src\Array.cpp" />
     <ClCompile Include="src\base64.c" />
     <ClCompile Include="src\Boolean.cpp" />
