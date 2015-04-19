@@ -1,7 +1,7 @@
 nuget{
     nuspec{
         id = libplist;
-        version : 1.12.1;
+        version : 1.12.{build};
         title: libplist;
         authors: {libimobiledevice Project};
         owners: {quamotion};
