@@ -1,0 +1,13 @@
+Index: libplist/libplist++.pc.in
+===================================================================
+--- libplist.orig/libplist++.pc.in	2014-03-24 11:29:02.651650424 +0800
++++ libplist/libplist++.pc.in	2014-03-24 11:30:05.809458913 +0800
+@@ -6,7 +6,7 @@
+ Name: libplist++
+ Description: C++ binding of libplist
+ Version: @VERSION@
+-Requires: libplist >= @VERSION@
++Requires.private: libplist >= @VERSION@
+ Libs: -L${libdir} -lplist++
+ Cflags: -I${includedir}
+ 
