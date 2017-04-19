@@ -8,7 +8,6 @@ Build-Depends: debhelper (>= 9.20120417~),
                dpkg-dev (>= 1.16.1),
                dh-autoreconf,
                pkg-config,
-               libxml2-dev,
                cython,
                python-all-dev (>= 2.6.6-3~),
                doxygen,
@@ -48,7 +47,6 @@ Package: libplist-dev
 Architecture: any
 Section: libdevel
 Depends: libplist3 (= ${binary:Version}),
-         libxml2-dev,
          ${misc:Depends}
 Description: Library for handling Apple binary and XML property lists
  libplist is a library for reading and writing the Apple binary and XML
@@ -61,7 +59,6 @@ Package: libplist++-dev
 Architecture: any
 Section: libdevel
 Depends: libplist++3v5 (= ${binary:Version}),
-         libxml2-dev,
          ${misc:Depends}
 Conflicts: libplist-dev (<= 0.13.2)
 Replaces: libplist-dev (<= 0.13.2)
