@@ -4,13 +4,13 @@ sudo: false
 matrix:
   include:
     - os: osx
-      env: TARGET=x86_64-apple-darwin RID=osx-x64 RUN_TESTS=yes
+      env: TARGET=x86_64-apple-darwin RID=osx-x64 RUN_TESTS=yes CREATE_DEB=no
     - os: linux
-      env: TARGET=x86_64-unknown-linux-gnu RID=linux-x64 RUN_TESTS=yes
+      env: TARGET=x86_64-unknown-linux-gnu RID=linux-x64 RUN_TESTS=yes CREATE_DEB=yes
     - os: linux
-      env: TARGET=arm-linux-gnueabihf RID=linux-arm RUN_TESTS=no
+      env: TARGET=arm-linux-gnueabihf RID=linux-arm RUN_TESTS=no CREATE_DEB=no
     - os: linux
-      env: TARGET=aarch64-linux-gnu RID=linux-arm64 RUN_TESTS=no
+      env: TARGET=aarch64-linux-gnu RID=linux-arm64 RUN_TESTS=no CREATE_DEB=no
 
 language: c
 
@@ -27,6 +27,10 @@ addons:
     - gcc-aarch64-linux-gnu
     - binutils-aarch64-linux-gnu
     - g++-aarch64-linux-gnu
+    - devscripts
+    - debhelper
+    - dh-autoreconf
+    - dput
 
 before_install:
 - test -n $CC && unset CC
@@ -45,6 +49,7 @@ after_success:
 - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then az=$HOME/Library/Python/2.7/bin/az; fi
 - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then az=$HOME/.local/bin/az; fi
 - $az storage blob upload -f libplist-$RID.tar.gz -c imobiledevice -n libplist-$RID-1.13.0-$TRAVIS_BUILD_NUMBER.tar.gz
+- if [[ "$CREATE_DEB" == "yes" ]]; then ./make-deb.sh xenial; fi
 
 after_failure:
 - cat config.log
