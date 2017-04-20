@@ -31,6 +31,7 @@ addons:
     - debhelper
     - dh-autoreconf
     - dput
+    - osc
 
 before_install:
 - test -n $CC && unset CC
@@ -50,6 +51,7 @@ after_success:
 - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then az=$HOME/.local/bin/az; fi
 - $az storage blob upload -f libplist-$RID.tar.gz -c imobiledevice -n libplist-$RID-1.13.0-$TRAVIS_BUILD_NUMBER.tar.gz
 - if [[ "$CREATE_DEB" == "yes" ]]; then ./make-deb.sh xenial; fi
+- if [[ "$CREATE_DEB" == "yes" ]]; then ./make-rpm.sh; fi
 
 after_failure:
 - cat config.log
