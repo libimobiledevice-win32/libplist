@@ -72,3 +72,7 @@ packages/
 *.nupkg
 Win32/
 x64/
+
+# Build
+osc/
+*.tar.gz
