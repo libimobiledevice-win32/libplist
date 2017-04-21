@@ -21,9 +21,9 @@ on_success:
   - cmd: wget http://coapp.org/files/CoApp.Tools.Powershell.msi
   - cmd: start /wait msiexec /qb /i CoApp.Tools.Powershell.msi
   - ps: .\CreateNuGetPackage.ps1 -Build $ENV:APPVEYOR_BUILD_NUMBER
-  - cmd: appveyor PushArtifact libplist.1.12.%APPVEYOR_BUILD_NUMBER%.nupkg
-  - cmd: appveyor PushArtifact libplist.symbols.1.12.%APPVEYOR_BUILD_NUMBER%.nupkg
-  - cmd: appveyor PushArtifact libplist.redist.1.12.%APPVEYOR_BUILD_NUMBER%.nupkg
+  - cmd: appveyor PushArtifact libplist.2.0.1.%APPVEYOR_BUILD_NUMBER%.nupkg
+  - cmd: appveyor PushArtifact libplist.symbols.2.0.1.%APPVEYOR_BUILD_NUMBER%.nupkg
+  - cmd: appveyor PushArtifact libplist.redist.2.0.1.%APPVEYOR_BUILD_NUMBER%.nupkg
 
 test_script:
   - ps: $res = Invoke-Pester -Path ".\test" -OutputFormat NUnitXml -OutputFile TestResults.xml -PassThru

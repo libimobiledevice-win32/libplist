@@ -17,6 +17,7 @@ language: c
 env:
   global:
   - CFLAGS=-fPIC
+  - LIBPLIST_VERSION_PREFIX=2.0.1
 
 addons:
   apt:
@@ -49,7 +50,7 @@ after_success:
 - tar -zcvf libplist-$RID.tar.gz -C $HOME/out .
 - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then az=$HOME/Library/Python/2.7/bin/az; fi
 - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then az=$HOME/.local/bin/az; fi
-- $az storage blob upload -f libplist-$RID.tar.gz -c imobiledevice -n libplist-$RID-1.13.0-$TRAVIS_BUILD_NUMBER.tar.gz
+- $az storage blob upload -f libplist-$RID.tar.gz -c imobiledevice -n libplist-$RID-$LIBPLIST_VERSION_PREFIX-$TRAVIS_BUILD_NUMBER.tar.gz
 - if [[ "$CREATE_DEB" == "yes" ]]; then ./make-deb.sh xenial; fi
 - if [[ "$CREATE_DEB" == "yes" ]]; then ./make-rpm.sh; fi
 
