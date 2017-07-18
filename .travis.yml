@@ -8,8 +8,6 @@ matrix:
     - os: linux
       env: TARGET=x86_64-unknown-linux-gnu RID=linux-x64 RUN_TESTS=yes CREATE_DEB=yes
     - os: linux
-      env: TARGET=arm-linux-gnueabihf RID=linux-arm RUN_TESTS=no CREATE_DEB=no
-    - os: linux
       env: TARGET=aarch64-linux-gnu RID=linux-arm64 RUN_TESTS=no CREATE_DEB=no
 
 language: c
@@ -22,9 +20,6 @@ env:
 addons:
   apt:
     packages:
-    - gcc-arm-linux-gnueabihf
-    - binutils-arm-linux-gnueabihf
-    - g++-arm-linux-gnueabihf
     - gcc-aarch64-linux-gnu
     - binutils-aarch64-linux-gnu
     - g++-aarch64-linux-gnu
