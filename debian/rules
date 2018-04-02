@@ -11,18 +11,15 @@ PYVER=$(shell pyversions -vd)
 	dh $@ --with python2,autoreconf
 
 override_dh_auto_configure:
-	dh_auto_configure -- PYTHON_VERSION=$(PYVER)
+	dh_auto_configure -- PYTHON_VERSION=$(PYVER) --without-cython
 
 override_dh_auto_build:
 	dh_auto_build
 	doxygen doxygen.cfg
 
 override_dh_install:
-	chrpath -d $(CURDIR)/debian/tmp/usr/lib/python*/*-packages/plist.so
 
 	# Remove files we won't install
-	rm -f $(CURDIR)/debian/tmp/usr/lib/python*/*-packages/plist.a
-	rm -f $(CURDIR)/debian/tmp/usr/lib/python*/*-packages/plist.la
 	rm -f $(CURDIR)/debian/tmp/usr/lib/*/*.la
 	rm -f $(CURDIR)/debian/tmp/usr/lib/*/*.a
 
