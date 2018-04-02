@@ -1,7 +1,16 @@
 libplist++.so.3 libplist++3v5 #MINVER#
- (c++)"PList::Dictionary::GetNodeKey[abi:cxx11](PList::Node*)@Base" 1.12
- (c++)"PList::Dictionary::End[abi:cxx11]()@Base" 1.12
- (c++)"PList::Dictionary::Begin[abi:cxx11]()@Base" 1.12
+# (c++)"PList::Dictionary::GetNodeKey[abi:cxx11](PList::Node*)@Base" 1.12
+# (c++)"PList::Dictionary::End[abi:cxx11]()@Base" 1.12
+# (c++)"PList::Dictionary::Begin[abi:cxx11]()@Base" 1.12
+# (c++)"PList::Key::GetValue[abi:cxx11]() const@Base" 1.12
+# (c++)"PList::String::GetValue[abi:cxx11]() const@Base" 1.12
+# (c++)"PList::Structure::ToXml[abi:cxx11]() const@Base" 1.12
+ (regex)"_ZN5PList10Dictionary10GetNodeKey.*EPNS_4NodeE@Base" 1.12
+ (regex)"_ZN5PList10Dictionary3End.*Ev@Base" 1.12
+ (regex)"_ZN5PList10Dictionary5Begin.*Ev@Base" 1.12
+ (regex)"_ZNK5PList3Key8GetValue.*Ev@Base" 1.12
+ (regex)"_ZNK5PList6String8GetValue.*Ev@Base" 1.12
+ (regex)"_ZNK5PList9Structure5ToXml.*Ev@Base" 1.12
  (c++)"PList::Dictionary::Remove(PList::Node*)@Base" 1.12
  (c++)"PList::Dictionary::Dictionary(PList::Node*)@Base" 1.12
  (c++)"PList::Dictionary::Dictionary(void*, PList::Node*)@Base" 1.12
@@ -145,7 +154,6 @@ libplist++.so.3 libplist++3v5 #MINVER#
  (c++)"PList::Structure::~Structure()@Base" 1.12
  (c++)"PList::Dictionary::Clone() const@Base" 1.12
  (c++)"PList::Key::Clone() const@Base" 1.12
- (c++)"PList::Key::GetValue[abi:cxx11]() const@Base" 1.12
  (c++)"PList::Uid::Clone() const@Base" 1.12
  (c++)"PList::Uid::GetValue() const@Base" 1.12
  (c++)"PList::Data::Clone() const@Base" 1.12
@@ -160,15 +168,13 @@ libplist++.so.3 libplist++3v5 #MINVER#
  (c++)"PList::Array::GetNodeIndex(PList::Node*) const@Base" 1.12
  (c++)"PList::Array::Clone() const@Base" 1.12
  (c++)"PList::String::Clone() const@Base" 1.12
- (c++)"PList::String::GetValue[abi:cxx11]() const@Base" 1.12
  (c++)"PList::Boolean::Clone() const@Base" 1.12
  (c++)"PList::Boolean::GetValue() const@Base" 1.12
  (c++)"PList::Integer::Clone() const@Base" 1.12
  (c++)"PList::Integer::GetValue() const@Base" 1.12
  (c++)"PList::Structure::ToBin() const@Base" 1.12
- (c++)"PList::Structure::ToXml[abi:cxx11]() const@Base" 1.12
  (c++)"PList::Structure::GetSize() const@Base" 1.12
- (optional|c++|regex)"std::.*" 1.12
+ (c++|regex)"std::.*" 1.12+0xenial
  (c++)"typeinfo for PList::Dictionary@Base" 1.12
  (c++)"typeinfo for PList::Key@Base" 1.12
  (c++)"typeinfo for PList::Uid@Base" 1.12
