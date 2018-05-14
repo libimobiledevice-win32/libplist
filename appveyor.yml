@@ -24,6 +24,9 @@ on_success:
   - cmd: appveyor PushArtifact libplist.2.0.1.%APPVEYOR_BUILD_NUMBER%.nupkg
   - cmd: appveyor PushArtifact libplist.symbols.2.0.1.%APPVEYOR_BUILD_NUMBER%.nupkg
   - cmd: appveyor PushArtifact libplist.redist.2.0.1.%APPVEYOR_BUILD_NUMBER%.nupkg
+  - cmd: nuget push -ApiKey %NUGET_API_KEY% libplist.2.0.1.%APPVEYOR_BUILD_NUMBER%.nupkg
+  - cmd: nuget push -ApiKey %NUGET_API_KEY% libplist.symbols.2.0.1.%APPVEYOR_BUILD_NUMBER%.nupkg
+  - cmd: nuget push -ApiKey %NUGET_API_KEY% libplist.redist.2.0.1.%APPVEYOR_BUILD_NUMBER%.nupkg
 
 test_script:
   - ps: $res = Invoke-Pester -Path ".\test" -OutputFormat NUnitXml -OutputFile TestResults.xml -PassThru
