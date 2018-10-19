@@ -99,7 +99,7 @@ jobs:
   steps:
   - script: |
       lsb_release -a
-      sudo apt-get remove -y libssl1.1
+      sudo apt-get remove -y libssl1.1 ant
     displayName: Check Ubuntu version, remove non-standard libssl1.1
   - script: |
       ./autogen.sh --prefix=$BUILD_ARTIFACTSTAGINGDIRECTORY/libplist/$RID --host=$TARGET --without-cython --enable-static=no --enable-shared=yes
