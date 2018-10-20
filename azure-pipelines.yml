@@ -122,6 +122,7 @@ jobs:
       echo $BUILD_SOURCEVERSION >> $BUILD_ARTIFACTSTAGINGDIRECTORY/libplist/$RID/gitinfo
   - script: |
       git archive --format tar.gz -o $BUILD_ARTIFACTSTAGINGDIRECTORY/libplist/libplist.orig.tar.gz $BUILD_SOURCEVERSION
+    displayName: Build source tarball
   - task: PublishBuildArtifacts@1
     inputs:
       pathtoPublish: '$(Build.ArtifactStagingDirectory)/libplist' 
