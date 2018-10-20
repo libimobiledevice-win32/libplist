@@ -120,6 +120,8 @@ jobs:
 
       echo $BUILD_REPOSITORY_URI\n >> $BUILD_ARTIFACTSTAGINGDIRECTORY/libplist/$RID/gitinfo
       echo $BUILD_SOURCEVERSION >> $BUILD_ARTIFACTSTAGINGDIRECTORY/libplist/$RID/gitinfo
+  - script: |
+      git archive --format tar.gz -o $BUILD_ARTIFACTSTAGINGDIRECTORY/libplist/libplist.orig.tar.gz $BUILD_SOURCEVERSION
   - task: PublishBuildArtifacts@1
     inputs:
       pathtoPublish: '$(Build.ArtifactStagingDirectory)/libplist' 
