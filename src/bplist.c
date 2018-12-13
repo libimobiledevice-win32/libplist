@@ -1259,7 +1259,7 @@ PLIST_API void plist_to_bin(plist_t plist, char **plist_bin, uint32_t * length)
     size_t req = 0;
     for (i = 0; i < num_objects; i++)
     {
-        node_t* node = ptr_array_index(objects, i);
+        node_t* node = (node_t*)ptr_array_index(objects, i);
         plist_data_t data = plist_get_data(node);
         uint64_t size;
         uint8_t bsize;
