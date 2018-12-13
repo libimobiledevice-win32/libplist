@@ -385,7 +385,11 @@ static char *plist_utf16be_to_utf8(uint16_t *unistr, long len, long *items_read,
 	}
 
 	while (i < len) {
+#if _MSC_VER
+		wc = be16toh(get_unaligned_16(unistr + i));
+#else
 		wc = be16toh(get_unaligned(unistr + i));
+#endif
 		i++;
 		if (wc >= 0xD800 && wc <= 0xDBFF) {
 			if (!read_lead_surrogate) {
