@@ -525,7 +525,7 @@ static void node_estimate_size(node_t *node, uint64_t *size, uint32_t depth)
 PLIST_API void plist_to_xml(plist_t plist, char **plist_xml, uint32_t * length)
 {
     uint64_t size = 0;
-    node_estimate_size(plist, &size, 0);
+    node_estimate_size((node_t*)plist, &size, 0);
     size += sizeof(XML_PLIST_PROLOG) + sizeof(XML_PLIST_EPILOG) - 1;
 
     strbuf_t *outbuf = str_buf_new(size);
