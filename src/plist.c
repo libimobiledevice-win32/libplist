@@ -481,7 +481,7 @@ PLIST_API void plist_dict_new_iter(plist_t node, plist_dict_iter *iter)
     if (iter && *iter == NULL)
     {
         *iter = malloc(sizeof(node_t*));
-        *((node_t**)(*iter)) = node_first_child(node);
+        *((node_t**)(*iter)) = node_first_child((node_t*)node);
     }
     return;
 }
