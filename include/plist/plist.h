@@ -300,7 +300,7 @@ extern "C"
      * @param node The node of type #PLIST_ARRAY
      * @param iter Location to store the iterator for the array.
      */
-    void plist_array_new_iter(plist_t node, plist_array_iter *iter);
+	PLIST_API_MSC void plist_array_new_iter(plist_t node, plist_array_iter *iter);
 
     /**
      * Increment iterator of a #PLIST_ARRAY node.
@@ -311,7 +311,7 @@ extern "C"
      *          returned item. Will be set to NULL when no more items are left
      *          to iterate.
      */
-    void plist_array_next_item(plist_t node, plist_array_iter iter, plist_t *item);
+	PLIST_API_MSC void plist_array_next_item(plist_t node, plist_array_iter iter, plist_t *item);
 
 
     /********************************************
