@@ -19,7 +19,6 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\libcnary\list.c" />
     <ClCompile Include="..\libcnary\node.c" />
     <ClCompile Include="..\libcnary\node_list.c" />
     <ClCompile Include="plist_cmp.c" />
