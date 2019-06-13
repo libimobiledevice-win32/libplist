@@ -1,3 +1,6 @@
+.vs/
+Win32/
+*.user
 *.swp
 *.o
 *.lo
