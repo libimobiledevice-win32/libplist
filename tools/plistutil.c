@@ -32,7 +32,9 @@
 #include <string.h>
 #include <sys/stat.h>
 #include <errno.h>
+#ifndef _MSC_VER
 #include <unistd.h>
+#endif
 
 #ifdef _MSC_VER
 #pragma warning(disable:4996)
@@ -158,6 +160,7 @@ int main(int argc, char *argv[])
 
     if (!options->in_file || !strcmp(options->in_file, "-"))
     {
+#ifndef _MSC_VER
         read_size = 0;
         plist_entire = malloc(sizeof(char) * read_capacity);
         if(plist_entire == NULL)
@@ -213,6 +216,10 @@ int main(int argc, char *argv[])
             free(options);
             return 1;
         }
+#else
+        printf("ERROR: reading from stdin is not supported on Windows");
+        return -1;
+#endif
     }
     else
     {
