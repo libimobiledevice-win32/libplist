@@ -28,7 +28,9 @@
 #include <string.h>
 #include <sys/stat.h>
 #include <errno.h>
+#ifndef _MSC_VER
 #include <unistd.h>
+#endif
 
 #define BUF_SIZE 2048 // Seems to be a decent start to cover most stdin files
 
@@ -143,6 +145,7 @@ int main(int argc, char *argv[])
 
     if (!options->in_file || !strcmp(options->in_file, "-"))
     {
+#ifndef _MSC_VER
 	read_size = 0;
         plist_entire = malloc(sizeof(char) * BUF_SIZE);
         if(plist_entire == NULL)
@@ -186,6 +189,10 @@ int main(int argc, char *argv[])
             free(options);
 	    return 1;
 	}
+#else
+        printf("ERROR: reading from stdin is not supported on Windows");
+        return -1;
+#endif
     }
     else
     {
